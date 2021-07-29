@@ -53,6 +53,7 @@ In the model perch it shows that the best two plots to use to find the weight is
 which.max(summary.out$adjr2)
 ```
 
+Using two variables.
 
 ```{r}
 summary.out$which[2,]
@@ -85,4 +86,55 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 ```
 
 The best two variables to use is Length 2 and Height.
+
+```{r}
+which.max(summary.out$adjr2)
+```
+
+using three variables.
+
+```{r}
+summary.out$which[2,]
+```
+
+The summary shows that the best two variables to use is length 2 and height.
+
+
+# Smelt
+
+```{r}
+Smelt <- filter(allthat,Species == "Smelt")
+Smelt <- select(Smelt,-1)
+```
+
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Smelt,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
+
+The best two variables for Smelt in this model is Length 2 and Width.
+
+
+```{r}
+which.max(summary.out$adjr2)
+```
+using four variables.
+
+```{r}
+summary.out$which[2,]
+```
+
+The summary of this model prsesnts that the best two variables are length 2 and Width.
+
+
 
