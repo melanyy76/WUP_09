@@ -26,7 +26,7 @@ allthat <- read.csv(file = "Fish.csv")
 # Perch
 
 ```{r}
-perch <- filter(allthat,Species == "Perch")
+perch <- filter(allthat,Species == "Perc")
 perch <- select(perch,-1)
 ```
 
