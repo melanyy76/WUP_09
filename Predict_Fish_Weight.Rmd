@@ -26,7 +26,7 @@ allthat <- read.csv(file = "Fish.csv")
 # Perch
 
 ```{r}
-perch <- filter(allthat,Species == "Perc")
+perch <- filter(allthat,Species == "Perch")
 perch <- select(perch,-1)
 ```
 
@@ -59,7 +59,7 @@ Using two variables.
 summary.out$which[2,]
 ```
 
-This summary suggests that the best two variables for the models were height and width.
+This model suggests that represents the fish species Perch, summarizes that the best two variables for the models were height and width.
 
 
 # Bream
@@ -96,8 +96,7 @@ using three variables.
 ```{r}
 summary.out$which[2,]
 ```
-
-The summary shows that the best two variables to use is length 2 and height.
+This model suggests that represents the fish species Bream, summarizes that the best two variables to use is length 2 and height.
 
 
 # Smelt
@@ -133,8 +132,9 @@ using four variables.
 ```{r}
 summary.out$which[2,]
 ```
-
-The summary of this model prsesnts that the best two variables are length 2 and Width.
-
+This model suggests that represents the fish species Smelt, summarizes that the best two variables are length 2 and Width.
 
 
+#  conclusion
+
+To conclude, The way we went along to figure out and respond to building the best regression model and pick out the best one. After organizing the data file Fish.csv I was able to conclude That the best regression model that was also summarized was the last model which specified over the fish species "Smelt". This model presented that it used four variables and suggested that the best two variables were length 02  and width. I was able to figure out the summaries by using the helper file named Bestsubset_Regression.
